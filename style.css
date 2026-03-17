@@ -7,18 +7,70 @@ margin:0;
 
 }
 
+/* HEADER ANIMATO MODERNO */
 header{
 
+position:relative;
+height:300px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:60px;
-background:linear-gradient(135deg,#2575fc,#6a11cb);
+overflow:hidden;
+background:#111;
 
 }
 
+/* glow blu */
+header::before{
+
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:#2575fc;
+filter:blur(120px);
+top:-100px;
+left:-100px;
+animation:move 8s infinite alternate;
+
+}
+
+/* glow viola */
+header::after{
+
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:#6a11cb;
+filter:blur(120px);
+bottom:-100px;
+right:-100px;
+animation:move2 10s infinite alternate;
+
+}
+
+/* animazioni */
+@keyframes move{
+0%{transform:translate(0,0);}
+100%{transform:translate(150px,150px);}
+}
+
+@keyframes move2{
+0%{transform:translate(0,0);}
+100%{transform:translate(-150px,-150px);}
+}
+
+/* testo sopra lo sfondo */
+header h1, header p{
+position:relative;
+z-index:1;
+}
+
 h1{
-
 font-size:40px;
-
 }
 
 section{
@@ -90,7 +142,7 @@ background:#000;
 
 }
 
-/* animazioni */
+/* animazioni scroll */
 
 .fade{
 
@@ -105,4 +157,5 @@ transition:1s;
 opacity:1;
 transform:translateY(0);
 
+}
 }
