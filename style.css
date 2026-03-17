@@ -4,10 +4,30 @@ font-family: Arial;
 background:#111;
 color:white;
 margin:0;
+animation:pulse 6s infinite alternate;
 
 }
 
-/* HEADER ANIMATO MODERNO */
+/* 🌈 glow pulsante */
+@keyframes pulse{
+0%{background:#111;}
+100%{background:#1a1a2e;}
+}
+
+/* 🧠 luce che segue il mouse */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle at var(--x) var(--y), #2575fc33, transparent 40%);
+pointer-events:none;
+z-index:0;
+}
+
+/* HEADER ANIMATO */
 header{
 
 position:relative;
@@ -22,9 +42,7 @@ background:#111;
 
 }
 
-/* glow blu */
 header::before{
-
 content:"";
 position:absolute;
 width:400px;
@@ -34,12 +52,9 @@ filter:blur(120px);
 top:-100px;
 left:-100px;
 animation:move 8s infinite alternate;
-
 }
 
-/* glow viola */
 header::after{
-
 content:"";
 position:absolute;
 width:400px;
@@ -49,10 +64,8 @@ filter:blur(120px);
 bottom:-100px;
 right:-100px;
 animation:move2 10s infinite alternate;
-
 }
 
-/* animazioni */
 @keyframes move{
 0%{transform:translate(0,0);}
 100%{transform:translate(150px,150px);}
@@ -63,7 +76,7 @@ animation:move2 10s infinite alternate;
 100%{transform:translate(-150px,-150px);}
 }
 
-/* testo sopra lo sfondo */
+/* testo sopra */
 header h1, header p{
 position:relative;
 z-index:1;
@@ -71,6 +84,12 @@ z-index:1;
 
 h1{
 font-size:40px;
+}
+
+/* contenuto sopra effetti */
+header, section, footer{
+position:relative;
+z-index:1;
 }
 
 section{
@@ -85,39 +104,30 @@ box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 h2{
-
 border-bottom:2px solid #444;
 padding-bottom:10px;
-
 }
 
 ul{
-
 list-style:none;
 padding:0;
-
 }
 
 .skills li{
-
 display:inline-block;
 background:#222;
 padding:10px 15px;
 margin:5px;
 border-radius:5px;
 transition:0.3s;
-
 }
 
 .skills li:hover{
-
 transform:scale(1.1);
 background:#2575fc;
-
 }
 
 button{
-
 padding:10px 20px;
 border:none;
 background:#2575fc;
@@ -125,37 +135,26 @@ color:white;
 border-radius:5px;
 cursor:pointer;
 margin-top:10px;
-
 }
 
 button:hover{
-
 background:#6a11cb;
-
 }
 
 footer{
-
 text-align:center;
 padding:20px;
 background:#000;
-
 }
 
 /* animazioni scroll */
-
 .fade{
-
 opacity:0;
 transform:translateY(40px);
 transition:1s;
-
 }
 
 .fade.visible{
-
 opacity:1;
 transform:translateY(0);
-
-}
 }
