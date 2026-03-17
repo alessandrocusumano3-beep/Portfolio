@@ -5,6 +5,7 @@ Personal portfolio website.
 Technologies used:
 - HTML
 - CSS
+- javascript
 
 Author:
 Cusumano Alessandro
